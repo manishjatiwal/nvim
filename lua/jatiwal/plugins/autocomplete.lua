@@ -10,9 +10,10 @@ return {
         },
         mapping = cmp.mapping.preset.insert({
           ['<C-Space>'] = cmp.mapping.complete(),
-          ['<C-p>'] = cmp.mapping.scroll_docs(-1),
-          ['<C-n>'] = cmp.mapping.scroll_docs(1),
+          ['<C-p>'] = cmp.mapping.select_prev_item({ behaviour = 'select' }),
+          ['<C-n>'] = cmp.mapping.select_next_item({ behaviour = 'select' }),
           ['<C-y>'] = cmp.mapping.confirm({select = true}),
+          ['<C-e>'] = cmp.mapping.abort()
         }),
         snippet = {
           expand = function(args)
